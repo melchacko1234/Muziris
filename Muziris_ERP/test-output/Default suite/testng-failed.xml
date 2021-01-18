@@ -3,18 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]" parallel="none">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="sales_invoice_estimate.Customer_Mobile_new_existingTest"/>
+      <class name="sales_invoice_estimate.Customer_Mobile_new_Test"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)" parallel="none">
     <classes>
-      <class name="sales_invoice_estimate.Customer_Mobile_new_existingTest">
+      <class name="sales_invoice_estimate.Customer_Mobile_new_Test">
         <methods>
-          <include name="Customer_Mobile_existing"/>
-          <include name="afterTest_Customer_Mobile_existing"/>
-          <include name="beforeTest_Customer_Mobile_existing"/>
+          <include name="afterTest_Customer_Mobile_New"/>
+          <include name="EAN_barcodeScan_new_cust_mob"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- sales_invoice_estimate.Customer_Mobile_new_existingTest -->
+      </class> <!-- sales_invoice_estimate.Customer_Mobile_new_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

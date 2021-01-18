@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" parallel="none">
+  <test thread-count="1" name="Test1">
+    <classes>
+      <class name="sales_invoice_estimate.Customer_Mobile_new_existingTest"/>
+    </classes>
+  </test> <!-- Test1 -->
+  <test name="Test1(failed)" parallel="none">
+    <classes>
+      <class name="sales_invoice_estimate.Customer_Mobile_new_existingTest">
+        <methods>
+          <include name="Customer_Mobile_existing"/>
+          <include name="afterTest_Customer_Mobile_existing"/>
+          <include name="barcode3_enoughstock"/>
+          <include name="barcode2"/>
+          <include name="barcode4"/>
+          <include name="barcode4_delete"/>
+          <include name="current_barcodes_save"/>
+          <include name="barcode1"/>
+        </methods>
+      </class> <!-- sales_invoice_estimate.Customer_Mobile_new_existingTest -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

@@ -1,44 +1,88 @@
 package sales_invoice_estimate;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
-import com.google.common.base.Function;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
+import listners.Allure_listner;
+import manager.BaseClass;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
-import org.testng.annotations.BeforeTest;
 
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
 
+import org.testng.SkipException;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.FluentWait;
+
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
 
-public class Customer_Mobile_new_existingTest {
+import org.testng.annotations.BeforeClass;
 
-	WebDriver driver=null;
-	
-	String handlewindow;
+import org.testng.annotations.Listeners;
 
 
-	@Test
-	public void Customer_Mobile_existing() throws InterruptedException {
+@Listeners({Allure_listner.class})
+public class Customer_Mobile_new_existingTest extends BaseClass {
+
+	public WebDriver driver;
+
+	public File scrFile;
+	SoftAssert softassert =new SoftAssert();
+
+	public String handlewindow, handlewindow1, handlewindow2, handlewindow3, handlewindow4;
+
+	@BeforeClass 
+	public void setUp() {
+		BaseClass bs= new BaseClass();
+		driver = bs.initialize_driver();
+		driver.get("http://192.168.0.131:8394/posmodules/");
+	}
+
+	@Test(priority = 1, description = "verifying MUziris ERP login test")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Testcase description: Verfiy login credentinals of MUziris ERP")
+	@Epic("EP001")
+	@Feature("Feature1: Login")
+	@Story("Story:Valid login")
+	//@Step("Verify login")
+
+	public void Customer_Mobile_existing_login() throws InterruptedException, IOException {
 
 		//Login Page
-		driver.get("http://192.168.0.131:8394/posmodules/");
+
+
+
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+
+		/* String actualTitle = driver.getTitle();
+		String expectedTitle = "Admin home";
+		softassert.assertEquals(false, true, expectedTitle);
+	   softassert.assertEquals(driver.getTitle(), "Admin home1");
+	   softassert.assertAll();*/
+
+
 
 		//Sales Invoice - Estimate Page
 
@@ -48,13 +92,27 @@ public class Customer_Mobile_new_existingTest {
 		driver.switchTo().window(handlewindow);
 		Thread.sleep(5000);
 
+		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales Invoice-Estimate_page.png"));
+	}
+
+	@Test(priority = 2, description = "Verifying scanning of first barcode test")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Testcase description: Verfiy scanning of first barcode in Sales Invoice - Estimate ")
+	@Epic("EP002")
+	@Feature("Feature 2: First barcode")
+	@Story("Story:First barcode")
+	@Step("Verify scanning of first barcode")
+	public  void barcode1() throws InterruptedException, IOException
+	{
+
 		driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9496531046");
 		driver.findElement(By.id("form")).submit();
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("121600478873");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157895427");
 		driver.findElement(By.id("form")).submit();
 		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
 		driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
-		String handlewindow1 = (String) driver.getWindowHandles().toArray()[1];
+		handlewindow1 = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow1);
 		Thread.sleep(5000);
 		new Select(driver.findElement(By.id("ddlPdt_additionalDisType"))).selectByVisibleText("Care of");
@@ -67,15 +125,30 @@ public class Customer_Mobile_new_existingTest {
 		driver.findElement(By.name("pdt_additionalApprovedBy")).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
+		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales_Invoice-Estimate_Barcode1_scan.png"));
+
+	}
 
 
-		//Scanning 2nd item of the barcode
+	//Scanning 2nd item of the barcode
 
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("121600547595");
+
+	@Test(priority = 3, description = "Verifying sacnning of Second barcode test")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Testcase description: Verfiy sacnning of Second barcode in Sales Invoice - Estimate ")
+	@Epic("EP003")
+	@Feature("Feature 3: Second barcode")
+	@Story("Story:Second barcode")
+	//@Step("Verify scanning of second barcode")
+	public  void barcode2() throws InterruptedException, IOException
+	{
+
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157895428");
 		driver.findElement(By.id("form")).submit();
 		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
 		driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
-		String handlewindow2 = (String) driver.getWindowHandles().toArray()[1];
+		handlewindow2 = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow2);
 		Thread.sleep(5000);
 		new Select(driver.findElement(By.id("ddlPdt_additionalDisType"))).selectByVisibleText("Damage");
@@ -93,25 +166,52 @@ public class Customer_Mobile_new_existingTest {
 		driver.findElement(By.name("pdt_additionalApprovedBy")).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
+		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales_Invoice-Estimate_Barcode2_scan.png"));
 
-		//3rd bardcode scan and also validation of enough stock for the particular barcode.
+	}
+	//3rd bardcode scan and also validation of enough stock for the particular barcode.
 
-
+	@Test(priority = 4, description = "Verifying sacnning of third barcode test")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Testcase description: Verfiy sacnning of third barcode in Sales Invoice - Estimate ")
+	@Epic("EP004")
+	@Feature("Feature 4: Third barcode")
+	@Story("Story:Third barcode")
+	@Step("Verify scanning of Third barcode")
+	public  void barcode3_enoughstock() throws InterruptedException, IOException
+	{
 		//code to check validation of enough stock.
 
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("121600547596");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157896758");
 		driver.findElement(By.id("form")).submit();
 		driver.findElement(By.id("txtSalesmanCode")).click();
 		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
 		driver.findElement(By.xpath("//button[@id='btnDone']")).click();
 
 		Thread.sleep(2000);
+		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales_Invoice-Estimate_Barcode3_scan.png"));
+
+
+	}
 
 
 
 
-		//4th barcode scan
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("121600547597");
+	//4th barcode scan
+
+
+	@Test(priority = 5, description = "Verifying sacnning of fourth barcode test")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Testcase description: Verfiy sacnning of fourth barcode in Sales Invoice - Estimate ")
+	@Epic("EP005")
+	@Feature("Feature 5: Fourth barcode")
+	@Story("Story:Fourth barcode")
+	@Step("Verify scanning of Fourth barcode")
+	public  void barcode4() throws InterruptedException, IOException
+	{
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157910948");
 		driver.findElement(By.id("form")).submit();
 		driver.findElement(By.id("txtSalesmanCode")).click();
 		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
@@ -121,40 +221,24 @@ public class Customer_Mobile_new_existingTest {
 		Thread.sleep(2000);
 		//driver.findElement(By.xpath("//button[@id='btnGenDiscount']")).click();
 		//delete general discount
-		
-		
+
+
 		//Actions action = new Actions(driver);
 		//WebElement we = driver.findElement(By.xpath("//button[@id='btnGenDiscount']"));
 		//action.moveToElement(we).moveToElement(driver.findElement(By.xpath("//button[@id='btnGenDiscount']"))).click().build().perform();
 		/* WebElement element = driver.findElement(By.id("something"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);*/
-		
-		
+
+
 		driver.findElement(By.id("btnGenDiscount")).sendKeys(Keys.RETURN);
 		//driver.findElement(By.id("ddlGenDisc_additionalDisType")).click();
-		String handlewindow3 = (String) driver.getWindowHandles().toArray()[1];
+		handlewindow3 = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow3);
 		Thread.sleep(5000);
 
-		/* Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-			       .withTimeout(30, TimeUnit.SECONDS)
-			       .pollingEvery(5, TimeUnit.SECONDS)
-			       .ignoring(NoSuchElementException.class);
-		 WebElement element = wait.until(new Function<WebDriver, WebElement>() {
-		     public WebElement apply(WebDriver driver) {
-		    	 new Select(driver.findElement(By.name("genDisc_additionalDisType"))).selectByVisibleText("Select");
-		    	 WebElement xpathelement= driver.findElement(By.name("genDisc_additionalDisType"));
-		    	 if(xpathelement.isEnabled())
-		    	 {
-		    		 System.out.println("Element found");
-		    	 }
-				return xpathelement;
-		     }
-		   });
-		   
-		   element.click();   */
-			   
+
+
 		new Select(driver.findElement(By.name("genDisc_additionalDisType"))).selectByVisibleText("Damage");
 		driver.findElement(By.name("genDisc_additionalDisType")).click();
 		Thread.sleep(3000);
@@ -168,22 +252,32 @@ public class Customer_Mobile_new_existingTest {
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[@id='btnGenDisc_ApplyAndClose']")).click();
 		Thread.sleep(3000);
+		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales_Invoice-Estimate_Barcode4_scan.png"));
+
+
+	}
+
+
+	//4th barcode delete.
+
+
+	@Test(priority = 6, description = "Verifying delete of 4th  barcode test")
+	@Severity(SeverityLevel.TRIVIAL)
+	@Description("Testcase description: Verfiy delete Fourth ,Second barcode and then save in Sales Invoice - Estimate ")
+	@Epic("EP006")
+	@Feature("Feature 6: Fourth ,Second barcode delete and then save")
+	@Story("Story:Fourth ,Second barcode delete and then save")
+	@Step("Verify Fourth ,Second barcode delete and then save")
+	public  void barcode4_2_delete_save() throws InterruptedException, IOException
+	{
 
 
 
-
-		//4th barcode delete.
-		
-		/*Actions action1 = new Actions(driver);
-		WebElement we1 = driver.findElement(By.xpath("//button[@id='btnGenDiscount']"));
-		action1.moveToElement(we1).moveToElement(driver.findElement(By.xpath("//button[@id='btnGenDiscount']"))).click().build().perform();*/
-		//driver.findElement(By.id("btnGenDiscount")).sendKeys(Keys.RETURN);
-		
-		
-		 WebElement element = driver.findElement(By.id("btnGenDiscount"));
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("arguments[0].click();", element);
-		String handlewindow4 = (String) driver.getWindowHandles().toArray()[1];
+		WebElement element = driver.findElement(By.id("btnGenDiscount"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+		handlewindow4 = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow4);
 		Thread.sleep(3000);
 
@@ -201,13 +295,15 @@ public class Customer_Mobile_new_existingTest {
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[@id='btnGenDisc_ApplyAndClose']")).click();
 
-		
-		
+
+
+
+
 		//First delete of barcode
 		Actions action = new Actions(driver);
 		action.moveToElement(driver.findElement(By.xpath("//table[@id='tblSalesInvoiceDtls']/tbody/tr[2]/td[4]"))).doubleClick().perform();
 
-		
+
 		driver.findElement(By.xpath(("//*[@id='rbnDelete']/following-sibling::span"))).click();    
 		driver.findElement(By.xpath("//button[@id='btnDone']")).click();
 
@@ -219,27 +315,40 @@ public class Customer_Mobile_new_existingTest {
 		driver.findElement(By.xpath(("//*[@id='rbnDelete']/following-sibling::span"))).click();    
 		driver.findElement(By.xpath("//button[@id='btnDone']")).sendKeys(Keys.RETURN);
 
+		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales_Invoice-Estimate_Barcode4_2_delete.png"));
+
+
 		// Save button 
-		
+
 		driver.findElement(By.xpath("//*[@id='hbnTBSave']/button")).sendKeys(Keys.RETURN);
 		//*[@id="hbnTBSave"]/button
 
 
 
-	}
-	@BeforeTest
-	public void beforeTest_Customer_Mobile_existing() {
-		WebDriverManager.chromedriver().setup();
-		driver= new ChromeDriver();
+
 
 	}
 
-	@AfterTest
-	public void afterTest_Customer_Mobile_existing() {
-		
-		
-		driver.close();
+	@Severity(SeverityLevel.NORMAL)	
+	@Test(priority=7, description="Verify user Registration")
+	@Description("Verify user Registration........")
+	@Epic("EP007")
+	@Feature("Feature7: Registration")
+	@Story("Story:User registration")
+
+	public void registrationTest()
+	{
+		throw new SkipException("Skipping this Test");
+	}
+
+
+	@AfterClass
+	public void tearDown()
+	{	
+		//driver.close();
 		driver.quit();
 	}
+
 
 }

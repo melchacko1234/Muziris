@@ -1,35 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="1" total="6" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38595" started-at="2020-12-31T05:58:32Z" finished-at="2020-12-31T05:59:10Z">
+  <suite name="Default suite" duration-ms="80426" started-at="2021-01-15T12:01:15Z" finished-at="2021-01-15T12:02:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38595" started-at="2020-12-31T05:58:32Z" finished-at="2020-12-31T05:59:10Z">
-      <class name="sales_invoice_estimate.Customer_Mobile_new_existingTest">
-        <test-method status="PASS" signature="beforeTest_Customer_Mobile_existing()[pri:0, instance:sales_invoice_estimate.Customer_Mobile_new_existingTest@38d08cb5]" name="beforeTest_Customer_Mobile_existing" is-config="true" duration-ms="4407" started-at="2020-12-31T11:28:32Z" finished-at="2020-12-31T11:28:36Z">
+    <test name="Default test" duration-ms="80426" started-at="2021-01-15T12:01:15Z" finished-at="2021-01-15T12:02:36Z">
+      <class name="sales_invoice_estimate.Customer_Mobile_new_Test">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5]" name="setUp" is-config="true" duration-ms="10411" started-at="2021-01-15T17:31:15Z" finished-at="2021-01-15T17:31:26Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest_Customer_Mobile_existing -->
-        <test-method status="FAIL" signature="Customer_Mobile_existing()[pri:0, instance:sales_invoice_estimate.Customer_Mobile_new_existingTest@38d08cb5]" name="Customer_Mobile_existing" duration-ms="33440" started-at="2020-12-31T11:28:36Z" finished-at="2020-12-31T11:29:10Z">
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="login_Customer_Mobile_New()[pri:1, instance:sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5]" name="login_Customer_Mobile_New" duration-ms="12313" started-at="2021-01-15T17:31:26Z" description="Verify user Registration" finished-at="2021-01-15T17:31:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_Customer_Mobile_New -->
+        <test-method status="PASS" signature="Customer_Mobile_New_registration()[pri:2, instance:sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5]" name="Customer_Mobile_New_registration" duration-ms="15371" started-at="2021-01-15T17:31:38Z" description="Verify user can complete new mobile number registration" finished-at="2021-01-15T17:31:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Customer_Mobile_New_registration -->
+        <test-method status="PASS" signature="Barcode1_new_cust_mob()[pri:3, instance:sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5]" name="Barcode1_new_cust_mob" duration-ms="14271" started-at="2021-01-15T17:31:54Z" description="Verify first Bradcode scan for new Customer mobile registered" finished-at="2021-01-15T17:32:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Barcode1_new_cust_mob -->
+        <test-method status="PASS" signature="barcode2_new_cust_mob()[pri:4, instance:sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5]" name="barcode2_new_cust_mob" duration-ms="2749" started-at="2021-01-15T17:32:08Z" description="Verify Second Bradcode scan for new Customer mobile registered" finished-at="2021-01-15T17:32:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- barcode2_new_cust_mob -->
+        <test-method status="PASS" signature="Advanced_Search_new_cust_mob()[pri:5, instance:sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5]" name="Advanced_Search_new_cust_mob" duration-ms="23889" started-at="2021-01-15T17:32:11Z" description="Verify Advanced Search for new Customer mobile registered" finished-at="2021-01-15T17:32:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Advanced_Search_new_cust_mob -->
+        <test-method status="FAIL" signature="EAN_barcodeScan_new_cust_mob()[pri:6, instance:sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5]" name="EAN_barcodeScan_new_cust_mob" duration-ms="217" started-at="2021-01-15T17:32:35Z" description="Verify EAN_barcodeScan for new Customer mobile registered" finished-at="2021-01-15T17:32:35Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[element not interactable: Element is not currently visible and may not be manipulated
-  (Session info: chrome=87.0.4280.88)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='productMRPList']/tbody/tr[2]/td[2]"}
+  (Session info: chrome=87.0.4280.141)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-83KADBQ', ip: '192.168.3.149', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52094}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59546}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c892237a8f4a6e73297f9fdcc1030b88
+*** Element info: {Using=xpath, value=//*[@id='productMRPList']/tbody/tr[2]/td[2]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable: Element is not currently visible and may not be manipulated
-  (Session info: chrome=87.0.4280.88)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='productMRPList']/tbody/tr[2]/td[2]"}
+  (Session info: chrome=87.0.4280.141)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-83KADBQ', ip: '192.168.3.149', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52094}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59546}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c892237a8f4a6e73297f9fdcc1030b88
+*** Element info: {Using=xpath, value=//*[@id='productMRPList']/tbody/tr[2]/td[2]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -40,11 +64,11 @@ Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at org.openqa.selenium.support.ui.Select.setSelected(Select.java:311)
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:116)
-	at sales_invoice_estimate.Customer_Mobile_new_existingTest.Customer_Mobile_existing(Customer_Mobile_new_existingTest.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at sales_invoice_estimate.Customer_Mobile_new_Test.EAN_barcodeScan_new_cust_mob(Customer_Mobile_new_Test.java:283)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -71,15 +95,15 @@ Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Customer_Mobile_existing -->
-        <test-method status="PASS" signature="afterTest_Customer_Mobile_existing()[pri:0, instance:sales_invoice_estimate.Customer_Mobile_new_existingTest@38d08cb5]" name="afterTest_Customer_Mobile_existing" is-config="true" duration-ms="722" started-at="2020-12-31T11:29:10Z" finished-at="2020-12-31T11:29:10Z">
+        </test-method> <!-- EAN_barcodeScan_new_cust_mob -->
+        <test-method status="PASS" signature="afterTest_Customer_Mobile_New()[pri:0, instance:sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5]" name="afterTest_Customer_Mobile_New" is-config="true" duration-ms="700" started-at="2021-01-15T17:32:35Z" finished-at="2021-01-15T17:32:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest_Customer_Mobile_existing -->
-      </class> <!-- sales_invoice_estimate.Customer_Mobile_new_existingTest -->
+        </test-method> <!-- afterTest_Customer_Mobile_New -->
+      </class> <!-- sales_invoice_estimate.Customer_Mobile_new_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

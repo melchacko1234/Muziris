@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Dec 31 11:28:32 IST 2020</td>
+<td>Started on:</td><td>Fri Jan 15 17:31:15 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>38 seconds (38595 ms)</td>
+<tr><td>Total time:</td><td>80 seconds (80426 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,14 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='sales_invoice_estimate.Customer_Mobile_new_existingTest.Customer_Mobile_existing()'><b>Customer_Mobile_existing</b><br>Test class: sales_invoice_estimate.Customer_Mobile_new_existingTest</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: Element is not currently visible and may not be manipulated
-  (Session info: chrome=87.0.4280.88)
+<td title='sales_invoice_estimate.Customer_Mobile_new_Test.EAN_barcodeScan_new_cust_mob()'><b>EAN_barcodeScan_new_cust_mob</b><br>Test class: sales_invoice_estimate.Customer_Mobile_new_Test<br>Test method: Verify EAN_barcodeScan for new Customer mobile registered</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;productMRPList&apos;]/tbody/tr[2]/td[2]&quot;}
+  (Session info: chrome=87.0.4280.141)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-83KADBQ&apos;, ip: &apos;192.168.3.149&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52094}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59546}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c892237a8f4a6e73297f9fdcc1030b88
+*** Element info: {Using=xpath, value=//*[@id=&apos;productMRPList&apos;]/tbody/tr[2]/td[2]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -93,11 +95,11 @@ Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at org.openqa.selenium.support.ui.Select.setSelected(Select.java:311)
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:116)
-	at sales_invoice_estimate.Customer_Mobile_new_existingTest.Customer_Mobile_existing(Customer_Mobile_new_existingTest.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at sales_invoice_estimate.Customer_Mobile_new_Test.EAN_barcodeScan_new_cust_mob(Customer_Mobile_new_Test.java:283)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -122,14 +124,16 @@ Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace671546968", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace671546968'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: Element is not currently visible and may not be manipulated
-  (Session info: chrome=87.0.4280.88)
+</pre></div><a href='#' onClick='toggleBox("stack-trace6788125", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace6788125'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;productMRPList&apos;]/tbody/tr[2]/td[2]&quot;}
+  (Session info: chrome=87.0.4280.141)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-83KADBQ&apos;, ip: &apos;192.168.3.149&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52094}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59546}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c892237a8f4a6e73297f9fdcc1030b88
+*** Element info: {Using=xpath, value=//*[@id=&apos;productMRPList&apos;]/tbody/tr[2]/td[2]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -140,11 +144,11 @@ Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at org.openqa.selenium.support.ui.Select.setSelected(Select.java:311)
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:116)
-	at sales_invoice_estimate.Customer_Mobile_new_existingTest.Customer_Mobile_existing(Customer_Mobile_new_existingTest.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at sales_invoice_estimate.Customer_Mobile_new_Test.EAN_barcodeScan_new_cust_mob(Customer_Mobile_new_Test.java:283)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -170,8 +174,41 @@ Session ID: d1a6c2ad21d95ab9d0d742a1b430dc9d
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>33</td>
-<td>sales_invoice_estimate.Customer_Mobile_new_existingTest@38d08cb5</td></tr>
+<td>0</td>
+<td>sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='sales_invoice_estimate.Customer_Mobile_new_Test.Advanced_Search_new_cust_mob()'><b>Advanced_Search_new_cust_mob</b><br>Test class: sales_invoice_estimate.Customer_Mobile_new_Test<br>Test method: Verify Advanced Search for new Customer mobile registered</td>
+<td></td>
+<td>23</td>
+<td>sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5</td></tr>
+<tr>
+<td title='sales_invoice_estimate.Customer_Mobile_new_Test.Barcode1_new_cust_mob()'><b>Barcode1_new_cust_mob</b><br>Test class: sales_invoice_estimate.Customer_Mobile_new_Test<br>Test method: Verify first Bradcode scan for new Customer mobile registered</td>
+<td></td>
+<td>14</td>
+<td>sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5</td></tr>
+<tr>
+<td title='sales_invoice_estimate.Customer_Mobile_new_Test.Customer_Mobile_New_registration()'><b>Customer_Mobile_New_registration</b><br>Test class: sales_invoice_estimate.Customer_Mobile_new_Test<br>Test method: Verify user can complete new mobile number registration</td>
+<td></td>
+<td>15</td>
+<td>sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5</td></tr>
+<tr>
+<td title='sales_invoice_estimate.Customer_Mobile_new_Test.barcode2_new_cust_mob()'><b>barcode2_new_cust_mob</b><br>Test class: sales_invoice_estimate.Customer_Mobile_new_Test<br>Test method: Verify Second Bradcode scan for new Customer mobile registered</td>
+<td></td>
+<td>2</td>
+<td>sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5</td></tr>
+<tr>
+<td title='sales_invoice_estimate.Customer_Mobile_new_Test.login_Customer_Mobile_New()'><b>login_Customer_Mobile_New</b><br>Test class: sales_invoice_estimate.Customer_Mobile_new_Test<br>Test method: Verify user Registration</td>
+<td></td>
+<td>12</td>
+<td>sales_invoice_estimate.Customer_Mobile_new_Test@5aae8eb5</td></tr>
 </table><p>
 </body>
 </html>
